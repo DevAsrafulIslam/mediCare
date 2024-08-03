@@ -1,0 +1,32 @@
+export const DOCTORS = [
+  {
+    _id: "jklm5678-n9op-4321-qrst-uvwxyzaabbcc",
+    name: "Karyen Anderson",
+    designation: "BTP - Senior Physiotherapist",
+    address: "Dhanmondi, Dhaka, Bangladesh",
+    available: "Available Mon, 22 December",
+    visit_charge: 15,
+    image: "../../../public/card/Rectangle 15 (1).png",
+    rating: 4.8,
+  },
+  {
+    _id: "z9y8x7w6-v5u4-3210-tsr3-qpon0987lmno",
+    name: "John Doe",
+    designation: "MPT - Junior Physiotherapist",
+    address: "Gulshan, Dhaka, Bangladesh",
+    available: "Available Wed, 24 December",
+    visit_charge: 20,
+    image: "../../../public/card/Rectangle 15 (2).png",
+    rating: 4.5,
+  },
+  {
+    _id: "a1b2c3d4-e5f6-7890-gh12-ijkl3456mnop",
+    name: "Jane Smith",
+    designation: "DPT - Consultant Physiotherapist",
+    address: "Banani, Dhaka, Bangladesh",
+    available: "Available Fri, 26 December",
+    visit_charge: 25,
+    image: "../../../public/card/Rectangle 15.png",
+    rating: 4.9,
+  },
+];
