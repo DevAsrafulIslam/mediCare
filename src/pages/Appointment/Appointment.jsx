@@ -124,6 +124,7 @@ const Appointment = () => {
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0 bg-white">
                           <TimePicker
+                            className="w-5"
                             onChange={setTime}
                             value={time}
                             disableClock={true} // Optionally, disable the built-in clock UI

@@ -6,6 +6,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@radix-ui/react-popover";
+
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
@@ -14,7 +15,7 @@ const MyAppointment = () => {
   const [date, setDate] = useState(new Date());
   return (
     <div className="container flex justify-between mx-auto">
-      <div className="max-w-[250px] hidden md:flex bg-slate-100 w-full p-4">
+      <div className="max-w-[250px] h-screen hidden md:flex bg-slate-100 w-full p-4">
         <h1>My Appointment</h1>
       </div>
       <div className="grid grid-cols-2 w-full justify-between px-7 py-12">
@@ -43,7 +44,6 @@ const MyAppointment = () => {
             </PopoverContent>
           </Popover>
         </div>
-        <div></div>
       </div>
     </div>
   );
