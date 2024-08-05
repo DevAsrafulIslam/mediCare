@@ -28,23 +28,25 @@ const PatientsReview = () => {
           sunt explicabo.
         </p>
       </div>
-      {Patients.map((parent, index) => (
-        <div key={index} className="grid md:grid-cols-2 gap-6">
-          <div className="border px-12 py-10 text-start rounded-xl">
-            <div className="flex justify-between items-center">
-              <div className="flex justify-between items-center gap-5">
-                <img src={parent.image} alt="" />
-                <span>
-                  <h4 className="text-xl font-bold">{parent.name}</h4>
-                  <p>{parent.designation}</p>
-                </span>
+      <div className="grid md:grid-cols-2 gap-6">
+        {Patients.map((parent, index) => (
+          <div key={index} className="">
+            <div className="border px-12 py-10 text-start rounded-xl">
+              <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center gap-5">
+                  <img src={parent.image} alt="" />
+                  <span>
+                    <h4 className="text-xl font-bold">{parent.name}</h4>
+                    <p>{parent.designation}</p>
+                  </span>
+                </div>
+                <span className="text-4xl">Cot</span>
               </div>
-              <span className="text-4xl">Cot</span>
+              <p className="text-justify">{parent.description}</p>
             </div>
-            <p className="text-justify">{parent.description}</p>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

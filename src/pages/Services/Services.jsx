@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 const Services = () => {
+  const [isClicked, setIsClicked] = useState(false);
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
   return (
     <div className="container mx-auto mb-32">
       <div className="grid md:grid-cols-2 my-[130px] justify-between gap-6 ">
@@ -41,8 +47,23 @@ const Services = () => {
                 architecto beatae vitae dicta sunt explicabo.
               </p>
             </div>
-            <button className=" text-[#F7A582] border border-[#F7A582] px-5 py-3 rounded-[10px]">
-              More Details
+            {isClicked && (
+              <div className="mb-4">
+                <h1>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptatibus nihil delectus sed vel perspiciatis consequatur
+                  reprehenderit tempora laborum aliquid. Harum, dolore iste
+                  consequuntur eius obcaecati ratione vitae eveniet corrupti
+                  quidem. Enim laboriosam minima deserunt cupiditate, natus
+                  iusto dicta iste ducimus!
+                </h1>
+              </div>
+            )}
+            <button
+              onClick={handleClick}
+              className=" text-[#F7A582] border border-[#F7A582] px-5 py-3 rounded-[10px]"
+            >
+              {isClicked ? "See Less!" : "See More"}
             </button>
           </div>
         </div>
