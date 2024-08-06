@@ -45,7 +45,7 @@ const NavBar = () => {
   return (
     <div className="bg-[#07332F] text-white w-full">
       <div className="container flex items-center justify-between">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 py-4">
           <img src="/public/Group 1.png" alt="" />
           <h1 className="text-2xl">
             Medi<span className="text-orange-600">Care</span>
