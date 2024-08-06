@@ -39,7 +39,7 @@ const Appointment = () => {
         </h1>
       </div>
       <div className="container mx-auto mt-[152px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-32 justify-around">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-32 justify-around">
           <div className="flex justify-center md:justify-around">
             <Calendar
               mode="single"
@@ -49,7 +49,7 @@ const Appointment = () => {
             />
           </div>
           <div>
-            <img src="/public/chair 1.png" alt="" />
+            <img className="" src="/public/chair 1.png" alt="" />
           </div>
         </div>
         <div>
@@ -57,18 +57,20 @@ const Appointment = () => {
             <p className="text-[#F7A582]">
               Available Services on April 30, 2022
             </p>
-            <h3 className="text-[40px] font-bold">Please select a service.</h3>
+            <h3 className="text-2xl md:text-[40px] font-bold">
+              Please select a service.
+            </h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
             {SERVICES.map((service, index) => (
               <Dialog key={index}>
                 <DialogTrigger asChild>
                   <button>
-                    <div className="flex items-center justify-around gap-4 p-4 border rounded-xl">
-                      <span className="bg-red-400 rounded-xl">
+                    <div className="flex items-center  gap-4 p-4 border rounded-xl">
+                      <span className="bg-red-400 items-start rounded-xl">
                         <img className="p-4" src={service.image} alt="" />
                       </span>
-                      <h3 className="lg:text-2xl font-bold">
+                      <h3 className="text-2xl text-center font-bold">
                         {service.service_name}
                       </h3>
                     </div>
@@ -170,15 +172,17 @@ const Appointment = () => {
             ))}
           </div>
           <div className="my-36">
-            <h3 className="text-[40px] text-center font-bold">
+            <h3 className="text-2xl md:text-[40px] text-center font-bold">
               Available slots for Teeth Orthodontics.
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
               {APPOINTMENTS.map((appointment, index) => (
                 <div className="mx-auto p-8 border gap-4" key={index}>
                   <img className="mx-auto" src={appointment.image} alt="" />
                   <div className="text-center space-y-4">
-                    <h3 className="text-2xl font-bold">{appointment.name}</h3>
+                    <h3 className="md:text-2xl font-bold">
+                      {appointment.name}
+                    </h3>
                     <p>{appointment.time}</p>
                     <button className="bg-orange-300 hover:bg-[#F7A582] px-4 py-2">
                       {appointment.buttonName}
