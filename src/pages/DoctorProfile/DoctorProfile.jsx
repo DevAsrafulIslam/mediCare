@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 const DoctorProfile = () => {
   const { id } = useParams();
   const doctor = DOCTORS.find((d) => d._id === id);
-  console.log(doctor);
 
   return (
     <div>

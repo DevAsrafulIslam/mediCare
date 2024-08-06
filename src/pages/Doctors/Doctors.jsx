@@ -20,7 +20,7 @@ const Doctors = () => {
         {DOCTORS.map((doctor, index) => (
           <div key={index} className="border divide-y-2 rounded-xl p-5">
             <div>
-              <img src={doctor.image} alt={doctor.name} />
+              <img className="w-full" src={doctor.image} alt={doctor.name} />
               <h4 className="text-xl py-2 font-bold">{doctor.name}</h4>
               <p>{doctor.designation}</p>
               <Rating
