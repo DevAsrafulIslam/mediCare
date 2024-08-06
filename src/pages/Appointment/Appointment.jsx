@@ -49,7 +49,7 @@ const Appointment = () => {
             />
           </div>
           <div>
-            <img className="" src="/public/chair 1.png" alt="" />
+            <img className="" src="/chair 1.png" alt="" />
           </div>
         </div>
         <div>
