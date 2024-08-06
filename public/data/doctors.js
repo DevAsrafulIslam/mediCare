@@ -6,7 +6,7 @@ export const DOCTORS = [
     address: "Dhanmondi, Dhaka, Bangladesh",
     available: "Available Mon, 22 December",
     visit_charge: 15,
-    image: "../../../public/card/Rectangle 15 (1).png",
+    image: "/card/Rectangle 15 (1).png",
     rating: 4.8,
   },
   {
@@ -16,7 +16,7 @@ export const DOCTORS = [
     address: "Gulshan, Dhaka, Bangladesh",
     available: "Available Wed, 24 December",
     visit_charge: 20,
-    image: "../../../public/card/Rectangle 15 (2).png",
+    image: "/card/Rectangle 15 (2).png",
     rating: 4.5,
   },
   {
@@ -26,7 +26,7 @@ export const DOCTORS = [
     address: "Banani, Dhaka, Bangladesh",
     available: "Available Fri, 26 December",
     visit_charge: 25,
-    image: "../../../public/card/Rectangle 15.png",
+    image: "/card/Rectangle 15.png",
     rating: 4.9,
   },
 ];

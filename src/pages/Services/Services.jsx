@@ -8,7 +8,7 @@ const Services = () => {
   return (
     <div className="container mx-auto mb-32">
       <div className="grid md:grid-cols-2 my-[130px] justify-between gap-6 ">
-        <img src="/public/Rectangle 20078.png" alt="" />
+        <img src="/Rectangle 20078.png" alt="" />
         <div className="">
           <h2 className="text-center md:text-start text-[40px] font-bold">
             Our Services
@@ -71,7 +71,7 @@ const Services = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
         <div className="flex gap-5 items-center text-white rounded-xl bg-[#07332F] px-8 py-14">
           <>
-            <img src="/public/logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </>
           <span>
             <h2 className="text-2xl">Opening Hours</h2>
@@ -82,7 +82,7 @@ const Services = () => {
         </div>
         <div className="flex gap-5 items-center text-white rounded-xl bg-[#F7A582] px-8 py-14">
           <>
-            <img src="/public/logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </>
           <span>
             <h2 className="text-2xl">Our Locations</h2>
@@ -93,7 +93,7 @@ const Services = () => {
         </div>
         <div className="flex gap-5 items-center text-white rounded-xl bg-[#07332F] px-8 py-14">
           <>
-            <img src="/public/logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </>
           <span>
             <h2 className="text-2xl">Contact Us</h2>
