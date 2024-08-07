@@ -12,11 +12,15 @@ import { FaCalendar, FaLocationDot } from "react-icons/fa6";
 import { DOCTORS } from "/public/data/doctors";
 import { useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
+import { useEffect } from "react";
 
 const DoctorProfile = () => {
   const { id } = useParams();
   const doctor = DOCTORS.find((d) => d._id === id);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="h-fit bg-no-repeat bg-cover bg-center bg-[url('/banner.png')]">
