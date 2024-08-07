@@ -1,9 +1,9 @@
 const Introduction = () => {
   return (
-    <div className="container mx-auto mb-32">
-      <div className="grid md:flex my-[130px] justify-between gap-6 ">
+    <div className=" mx-auto mb-32">
+      <div className="grid md:flex md:my-[130px] justify-between gap-6 ">
         <img className="text-center" src="/doctor/doctor.png" alt="" />
-        <div className="container mx-auto space-y-4 divide-y-2">
+        <div className="space-y-4 divide-y-2">
           <div>
             <div>
               <h3 className="text-xl md:text-3xl text-center md:text-start">

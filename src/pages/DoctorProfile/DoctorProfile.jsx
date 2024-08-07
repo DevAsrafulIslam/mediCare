@@ -61,7 +61,7 @@ const DoctorProfile = () => {
                 <TabsTrigger value="overview">Overview</TabsTrigger>
                 <TabsTrigger value="locations">Locations</TabsTrigger>
                 <TabsTrigger value="reviews">Reviews</TabsTrigger>
-                <TabsTrigger value="business">Business Hours</TabsTrigger>
+                <TabsTrigger value="business">Business</TabsTrigger>
               </TabsList>
               <TabsContent value="overview">
                 <Card className="">

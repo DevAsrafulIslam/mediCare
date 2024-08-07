@@ -21,7 +21,7 @@ const PatientsReview = () => {
     <div className="text-center">
       <div>
         <h2 className="text-[40px] font-bold">What Our Patients Says</h2>
-        <p className="w-9/12 mt-5 mb-[50px] mx-auto">
+        <p className="md:w-9/12 mt-5 mb-[50px] text-justify">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inve ntore veritatis et quasi architecto beatae vitae dicta
@@ -31,7 +31,7 @@ const PatientsReview = () => {
       <div className="grid md:grid-cols-2 gap-6">
         {Patients.map((parent, index) => (
           <div key={index} className="">
-            <div className="border px-12 py-10 text-start rounded-xl">
+            <div className="border px-6 py-8 text-start rounded-xl">
               <div className="flex justify-between items-center">
                 <div className="flex justify-between items-center gap-5">
                   <img src={parent.image} alt="" />

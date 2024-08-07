@@ -9,14 +9,14 @@ const Doctors = () => {
     <div>
       <div className="text-center mt-[130px]">
         <h2 className="text-[40px] font-bold">Our Expert Doctors</h2>
-        <p className="w-9/12 mt-5 mb-[50px] mx-auto">
+        <p className="md:w-9/12 text-justify mt-5 mb-[50px] mx-auto">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo inve ntore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-between">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {DOCTORS.map((doctor, index) => (
           <div key={index} className="border divide-y-2 rounded-xl p-5">
             <div>
