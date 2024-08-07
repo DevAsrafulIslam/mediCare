@@ -12,8 +12,8 @@ const Home = () => {
         <Services />
         <PatientsReview />
         <Doctors />
-        <Contact />
       </div>
+      <Contact />
     </div>
   );
 };
