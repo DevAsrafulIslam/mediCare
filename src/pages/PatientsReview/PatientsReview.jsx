@@ -40,7 +40,6 @@ const PatientsReview = () => {
                     <p>{parent.designation}</p>
                   </span>
                 </div>
-                <span className="text-4xl">Cot</span>
               </div>
               <p className="text-justify">{parent.description}</p>
             </div>

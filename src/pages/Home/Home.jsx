@@ -2,7 +2,7 @@ import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import Doctors from "../Doctors/Doctors";
 import PatientsReview from "../PatientsReview/PatientsReview";
-import Services from "../Services/Services";
+import Services from "../Introduction/Introduction";
 
 const Home = () => {
   return (
