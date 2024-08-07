@@ -31,7 +31,7 @@ const NAVIGATION = [
   },
   {
     name: "Login",
-    href: "/login",
+    href: "/signin",
   },
 ];
 

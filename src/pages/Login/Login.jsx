@@ -42,7 +42,7 @@ const Login = () => {
                 <Input id="password" placeholder="Your Password" />
               </div>
               <div className="text-black space-y-1.5">
-                <Link to="/login">
+                <Link to="/signin">
                   <Button
                     variant="outline"
                     className="w-full hover:bg-slate-500 hover:text-white hover:border-slate-500 border-zinc-950"
