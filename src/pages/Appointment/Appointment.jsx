@@ -34,7 +34,7 @@ const Appointment = () => {
   return (
     <div>
       <div className="h-fit bg-no-repeat bg-cover bg-center bg-[url('/banner.png')]">
-        <h1 className="container mx-auto text-4xl text-white py-36">
+        <h1 className="container mx-auto text-4xl text-white py-20 md:py-36">
           Appointment
         </h1>
       </div>
@@ -53,6 +53,8 @@ const Appointment = () => {
           </div>
         </div>
         <div>
+          {/* Services */}
+
           <div className="text-center mt-32 mb-12">
             <p className="text-[#F7A582]">
               Available Services on April 30, 2022
@@ -171,13 +173,16 @@ const Appointment = () => {
               </Dialog>
             ))}
           </div>
+
+          {/* book appointment */}
+
           <div className="my-36">
             <h3 className="text-2xl md:text-[40px] text-center font-bold">
               Available slots for Teeth Orthodontics.
             </h3>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
               {APPOINTMENTS.map((appointment, index) => (
-                <div className="mx-auto p-8 border gap-4" key={index}>
+                <div className="w-full mx-auto p-8 border gap-4" key={index}>
                   <img className="mx-auto" src={appointment.image} alt="" />
                   <div className="text-center space-y-4">
                     <h3 className="md:text-2xl font-bold">

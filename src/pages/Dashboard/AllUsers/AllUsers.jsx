@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const AllUsers = () => {
   return (
-    <div className="container flex justify-between mx-auto">
+    <div className="flex justify-between">
       <div className="">
         <h1 className="max-w-[250px] w-full p-4">Deshboard</h1>
         <div className="grid space-y-4 max-w-[250px] bg-slate-100 w-full p-4">
