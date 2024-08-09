@@ -9,43 +9,28 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { FaGoogle } from "react-icons/fa6";
 
 import { useContext } from "react";
 import { AuthContext } from "@/providers/AuthProviders";
-import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
-  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { createUser, googleSignIn } = useContext(AuthContext);
   console.log(createUser);
-
-  // const handleGoogleSignIn = () => {
-  //   googleLogin()
-  //     .then((result) => {
-  //       const loggedUser = result.user;
-  //       console.log(loggedUser);
-  //       setUser(loggedUser);
-  //       // navigate("/");
-  //     })
-  //     .catch((error) => {
-  //       console.log("error", error.message);
-  //     });
-  // };
-
-  // signOut
-  // const handleSignOut = () => {
-  //   signOut(auth)
-  //     .then((result) => {
-  //       console.log(result);
-  //       setUser(null);
-  //     })
-  //     .catch((error) => {
-  //       console.log("error", error.message);
-  //     });
-  // };
-
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
   return (
     <div className="container">
       <Card className="w-[350px] mx-auto my-36">
@@ -99,13 +84,12 @@ const Login = () => {
             Email
           </Button>
           <Button
-            // onClick={handleSignOut}
+            onClick={handleGoogleSignIn}
             variant="outline"
             className="hover:bg-slate-500 hover:text-white rounded-xl hover:border-slate-500 border-zinc-950 gap-2"
           >
-            <FaGoogle /> Sign Out
+            <FaGoogle /> Sign In
           </Button>
-          <SocialLogin />
         </CardFooter>
       </Card>
     </div>

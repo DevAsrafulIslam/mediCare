@@ -31,15 +31,22 @@ const NAVIGATION = [
     name: "Appointment",
     href: "/appointment",
   },
-  {
-    name: "Login",
-    href: "/signin",
-  },
+  // {
+  //   name: "Login",
+  //   href: "/signin",
+  // },
 ];
 
 const NavBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, LogOut } = useContext(AuthContext);
   console.log(user, "navbar");
+  const handleAuthAction = () => {
+    if (user) {
+      LogOut(); // If user is logged in, sign out
+    } else {
+      window.location.href = "/login";
+    }
+  };
 
   const { pathname } = useLocation();
   const [isClicked, setIsClicked] = useState(false);
@@ -73,6 +80,14 @@ const NavBar = () => {
                   </Link>
                 </NavigationMenuItem>
               ))}
+              <NavigationMenuItem>
+                <Button
+                  onClick={handleAuthAction}
+                  className="hover:bg-teal-800 transition duration-300"
+                >
+                  {user ? "Logout" : "Login"}
+                </Button>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
