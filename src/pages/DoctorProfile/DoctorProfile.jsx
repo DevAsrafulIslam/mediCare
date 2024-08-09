@@ -9,7 +9,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { FaCalendar, FaLocationDot } from "react-icons/fa6";
-import { DOCTORS } from "/public/data/doctors";
+import { DOCTORS } from "@/data/doctors";
 import { useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import { useEffect } from "react";

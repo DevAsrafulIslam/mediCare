@@ -20,9 +20,11 @@ import {
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
+import { APPOINTMENT_TABLE } from "@/data/my-appointmentTable";
 
 const MyAppointment = () => {
   const [date, setDate] = useState(new Date());
+
   return (
     <div className="flex justify-between mx-auto">
       <div className="max-w-[250px] h-screen hidden md:flex bg-slate-100 w-full p-8">
@@ -62,22 +64,25 @@ const MyAppointment = () => {
 
         <Table>
           <TableCaption>A list of your recent invoices.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-[100px]">Invoice</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Method</TableHead>
-              <TableHead className="text-right">Amount</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell className="font-medium">INV001</TableCell>
-              <TableCell>Paid</TableCell>
-              <TableCell>Credit Card</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-          </TableBody>
+          <div className="flex">
+            {APPOINTMENT_TABLE.tableHead.map((tableHead, index) => (
+              <TableHeader key={index}>
+                <TableRow>
+                  <TableHead className="w-[100px]">{tableHead}</TableHead>
+                </TableRow>
+              </TableHeader>
+            ))}
+          </div>
+          {APPOINTMENT_TABLE.items.map((item, index) => (
+            <TableBody key={index}>
+              <TableRow>
+                <TableCell>{item.Name}</TableCell>
+                <TableCell>{item.Status}</TableCell>
+                <TableCell>{item.Method}</TableCell>
+                <TableCell className="text-right">{item.Amount}</TableCell>
+              </TableRow>
+            </TableBody>
+          ))}
         </Table>
       </div>
     </div>

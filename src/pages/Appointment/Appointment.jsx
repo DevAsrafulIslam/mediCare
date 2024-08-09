@@ -22,9 +22,9 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-import { SERVICES } from "/public/data/services";
+import { SERVICES } from "@/data/services";
 import { useState } from "react";
-import { APPOINTMENTS } from "/public/data/appointments";
+import { APPOINTMENTS } from "@/data/appointments";
 import TimePicker from "react-time-picker";
 
 const Appointment = () => {

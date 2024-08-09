@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import { FaCalendar, FaDollarSign, FaLocationDot } from "react-icons/fa6";
 
-import { DOCTORS } from "/public/data/doctors";
+import { DOCTORS } from "@/data/doctors";
 
 const Doctors = () => {
   return (
