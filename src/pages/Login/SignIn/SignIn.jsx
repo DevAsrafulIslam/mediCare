@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { FaGoogle } from "react-icons/fa6";
 
 import {
   Card,
@@ -12,11 +11,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
+import SocialLogin from "@/pages/SocialLogin/SocialLogin";
 
 const SignIn = () => {
   return (
     <div className="container">
       <Card className="w-[350px] mx-auto my-36">
+        {/* {user && <div>{user.displayName}</div>} */}
         <CardHeader>
           <CardTitle className="text-center">
             Sign Up to
@@ -46,18 +47,16 @@ const SignIn = () => {
                 <Input id="password" type="password" placeholder="Password" />
               </div>
               <div className="text-black space-y-1.5">
-                <Link to="/login">
-                  <Button
-                    variant="outline"
-                    className="w-full hover:bg-slate-500 hover:text-white hover:border-slate-500 border-zinc-950"
-                  >
-                    Create Account
-                  </Button>
-                </Link>
+                <Button
+                  variant="outline"
+                  className="w-full hover:bg-slate-500 hover:text-white hover:border-slate-500 border-zinc-950"
+                >
+                  Create Account
+                </Button>
               </div>
               <span className="text-black text-center" to="">
                 Already have an account. Go to{" "}
-                <Link to="/signin" className="text-red-300">
+                <Link to="/login" className="text-red-300">
                   SIGN IN
                 </Link>
               </span>
@@ -72,12 +71,7 @@ const SignIn = () => {
             <Mail className="mr-2 h-4 w-4" />
             Email
           </Button>
-          <Button
-            variant="outline"
-            className="hover:bg-slate-500 hover:text-white rounded-xl hover:border-slate-500 border-zinc-950 gap-2"
-          >
-            <FaGoogle /> Google
-          </Button>
+          <SocialLogin />
         </CardFooter>
       </Card>
     </div>

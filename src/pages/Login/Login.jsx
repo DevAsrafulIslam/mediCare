@@ -9,29 +9,43 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { Mail } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { app } from "@/firebase.config";
 import { FaGoogle } from "react-icons/fa6";
 
+import { useContext } from "react";
+import { AuthContext } from "@/providers/AuthProviders";
+import SocialLogin from "../SocialLogin/SocialLogin";
+
 const Login = () => {
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-  // navigate to another page
-  const navigate = useNavigate();
-  // sign in with google
-  const handleGoogleSignIn = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log("error", error.message);
-      });
-  };
+  const { createUser } = useContext(AuthContext);
+  console.log(createUser);
+
+  // const handleGoogleSignIn = () => {
+  //   googleLogin()
+  //     .then((result) => {
+  //       const loggedUser = result.user;
+  //       console.log(loggedUser);
+  //       setUser(loggedUser);
+  //       // navigate("/");
+  //     })
+  //     .catch((error) => {
+  //       console.log("error", error.message);
+  //     });
+  // };
+
+  // signOut
+  // const handleSignOut = () => {
+  //   signOut(auth)
+  //     .then((result) => {
+  //       console.log(result);
+  //       setUser(null);
+  //     })
+  //     .catch((error) => {
+  //       console.log("error", error.message);
+  //     });
+  // };
+
   return (
     <div className="container">
       <Card className="w-[350px] mx-auto my-36">
@@ -60,18 +74,16 @@ const Login = () => {
                 <Input id="password" placeholder="Your Password" />
               </div>
               <div className="text-black space-y-1.5">
-                <Link to="/signin">
-                  <Button
-                    variant="outline"
-                    className="w-full hover:bg-slate-500 hover:text-white hover:border-slate-500 border-zinc-950"
-                  >
-                    Login
-                  </Button>
-                </Link>
+                <Button
+                  variant="outline"
+                  className="w-full hover:bg-slate-500 hover:text-white hover:border-slate-500 border-zinc-950"
+                >
+                  Login
+                </Button>
               </div>
               <span className="text-black text-center" to="">
                 Please register at first. Go to{" "}
-                <Link to="/signup" className="text-red-300">
+                <Link to="/signin" className="text-red-300">
                   SIGN UP
                 </Link>
               </span>
@@ -87,12 +99,13 @@ const Login = () => {
             Email
           </Button>
           <Button
-            onClick={handleGoogleSignIn}
+            // onClick={handleSignOut}
             variant="outline"
             className="hover:bg-slate-500 hover:text-white rounded-xl hover:border-slate-500 border-zinc-950 gap-2"
           >
-            <FaGoogle /> Google
+            <FaGoogle /> Sign Out
           </Button>
+          <SocialLogin />
         </CardFooter>
       </Card>
     </div>

@@ -15,7 +15,9 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "@/providers/AuthProviders";
+
 const NAVIGATION = [
   {
     name: "Home",
@@ -36,6 +38,9 @@ const NAVIGATION = [
 ];
 
 const NavBar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user, "navbar");
+
   const { pathname } = useLocation();
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = () => {
@@ -51,6 +56,7 @@ const NavBar = () => {
             Medi<span className="text-orange-600">Care</span>
           </h1>
         </div>
+        <div>{user?.displayName}</div>
         <div className="hidden md:flex">
           <NavigationMenu>
             <NavigationMenuList>
