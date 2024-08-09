@@ -7,7 +7,8 @@ import Login from "@/pages/Login/Login";
 import DoctorProfile from "@/pages/DoctorProfile/DoctorProfile";
 import MyAppointment from "@/pages/Dashboard/MyAppointment/MyAppointment";
 import AllUsers from "@/pages/Dashboard/AllUsers/AllUsers";
-import SignIn from "@/pages/Login/SignIn/SignIn";
+import SignIn from "@/SignIn/SignIn";
+
 export const router = createBrowserRouter([
   {
     path: "/",

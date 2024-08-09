@@ -31,10 +31,10 @@ const NAVIGATION = [
     name: "Appointment",
     href: "/appointment",
   },
-  // {
-  //   name: "Login",
-  //   href: "/signin",
-  // },
+  {
+    name: "Login",
+    href: "/login",
+  },
 ];
 
 const NavBar = () => {
@@ -85,7 +85,7 @@ const NavBar = () => {
                   onClick={handleAuthAction}
                   className="hover:bg-teal-800 transition duration-300"
                 >
-                  {user ? "Logout" : "Login"}
+                  {user && "Logout"}
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -103,19 +103,23 @@ const NavBar = () => {
             </SheetHeader>
             <div className="grid gap-4 py-4">
               <div className="grid items-center text-center gap-4">
-                {NAVIGATION.map((nav) => (
-                  <div key={nav.href}>
-                    <Link to={nav.href}>
-                      <Button
-                        className={`hover:text-white w-full hover:bg-teal-800 transition duration-300${
-                          nav.href === pathname ? " bg-teal-800" : ""
-                        }`}
-                      >
-                        {nav.name}
-                      </Button>
-                    </Link>
-                  </div>
-                ))}
+                {NAVIGATION.map((dNav) => {
+                  if (dNav.href == "/login" && user) return null;
+                  return (
+                    <div key={dNav.href}>
+                      <Link to={dNav.href}>
+                        <Button
+                          onClick={handleAuthAction}
+                          className={`hover:text-white w-full hover:bg-teal-800 transition duration-300${
+                            dNav.href === pathname ? " bg-teal-800" : ""
+                          }`}
+                        >
+                          {dNav.name}
+                        </Button>
+                      </Link>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </SheetContent>
