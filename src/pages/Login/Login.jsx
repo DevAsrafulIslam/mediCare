@@ -9,29 +9,29 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-dropdown-menu";
 import { Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-// import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import { app } from "@/firebase.config";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { app } from "@/firebase.config";
 import { FaGoogle } from "react-icons/fa6";
 
 const Login = () => {
-  // const auth = getAuth(app);
-  // const provider = new GoogleAuthProvider();
-  // // navigate to another page
-  // const navigate = useNavigate();
-  // // sign in with google
-  // const handleGoogleSignIn = () => {
-  //   signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       const user = result.user;
-  //       console.log(user);
-  //       navigate("/");
-  //     })
-  //     .catch((error) => {
-  //       console.log("error", error.message);
-  //     });
-  // };
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  // navigate to another page
+  const navigate = useNavigate();
+  // sign in with google
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
   return (
     <div className="container">
       <Card className="w-[350px] mx-auto my-36">
@@ -87,7 +87,7 @@ const Login = () => {
             Email
           </Button>
           <Button
-            // onClick={handleGoogleSignIn}
+            onClick={handleGoogleSignIn}
             variant="outline"
             className="hover:bg-slate-500 hover:text-white rounded-xl hover:border-slate-500 border-zinc-950 gap-2"
           >
