@@ -6,8 +6,12 @@ import Appointment from "@/pages/Appointment/Appointment";
 import Login from "@/pages/Login/Login";
 import DoctorProfile from "@/pages/DoctorProfile/DoctorProfile";
 import MyAppointment from "@/pages/Dashboard/MyAppointment/MyAppointment";
-import AllUsers from "@/pages/Dashboard/AllUsers/AllUsers";
+
 import SignIn from "@/SignIn/SignIn";
+import Dashboard from "@/pages/Dashboard/Dashboard/Dashboard";
+import AllUsers from "@/pages/Dashboard/AllUsers/AllUsers";
+import AddDoctor from "@/pages/Dashboard/AddDoctor/AddDoctor";
+import ManageDoctors from "@/pages/Dashboard/ManageDoctors/ManageDoctors";
 
 export const router = createBrowserRouter([
   {
@@ -39,12 +43,24 @@ export const router = createBrowserRouter([
         element: <DoctorProfile />,
       },
       {
-        path: "/my-appointment",
+        path: "/myappointment",
         element: <MyAppointment />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
         path: "/allusers",
         element: <AllUsers />,
+      },
+      {
+        path: "/addDoctor",
+        element: <AddDoctor />,
+      },
+      {
+        path: "/manageDoctor",
+        element: <ManageDoctors />,
       },
     ],
   },

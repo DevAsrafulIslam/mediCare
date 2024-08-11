@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -20,10 +19,24 @@ import {
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useState } from "react";
-import { APPOINTMENT_TABLE } from "@/data/my-appointmentTable";
+import { APPOINTMENT_TABLE } from "@/data/appointmentTable";
 
 const MyAppointment = () => {
   const [date, setDate] = useState(new Date());
+  // const { pathname } = useLocation();
+  // const updatedPathname = pathname.startsWith("/")
+  //   ? pathname.slice(1)
+  //   : pathname;
+  // const replaceHyphens = updatedPathname.replace(/-/g, " "); // Replace hyphens with spaces
+
+  // const toTitleCase = (str) =>
+  //   str
+  //     .toLowerCase()
+  //     .split(" ")
+  //     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+  //     .join(" ");
+
+  // const titleCasePathname = toTitleCase(replaceHyphens);
 
   return (
     <div className="flex justify-between mx-auto">
@@ -31,7 +44,7 @@ const MyAppointment = () => {
         <h1>My Appointment</h1>
       </div>
 
-      <div className="grid w-full px-7 py-12">
+      <div className=" w-full px-7 py-12">
         <div className="grid grid-cols-2 w-full justify-between ">
           <div>
             <h1 className="text-2xl text-orange-600">My Appointment</h1>
@@ -62,24 +75,25 @@ const MyAppointment = () => {
           </div>
         </div>
 
-        <Table>
-          <TableCaption>A list of your recent invoices.</TableCaption>
-          <div className="flex">
-            {APPOINTMENT_TABLE.tableHead.map((tableHead, index) => (
-              <TableHeader key={index}>
-                <TableRow>
-                  <TableHead className="w-[100px]">{tableHead}</TableHead>
-                </TableRow>
-              </TableHeader>
-            ))}
-          </div>
+        <Table className="mt-8">
+          <TableHeader>
+            <TableRow>
+              {APPOINTMENT_TABLE.tableHead.map((tableHead, index) => (
+                <TableHead key={index} className="bg-slate-200">
+                  {tableHead}
+                </TableHead>
+              ))}
+            </TableRow>
+          </TableHeader>
+
           {APPOINTMENT_TABLE.items.map((item, index) => (
             <TableBody key={index}>
               <TableRow>
+                <TableCell>{index + 1}</TableCell>
                 <TableCell>{item.Name}</TableCell>
                 <TableCell>{item.Status}</TableCell>
                 <TableCell>{item.Method}</TableCell>
-                <TableCell className="text-right">{item.Amount}</TableCell>
+                <TableCell>{item.Amount}</TableCell>
               </TableRow>
             </TableBody>
           ))}

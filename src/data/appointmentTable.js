@@ -1,5 +1,12 @@
 export const APPOINTMENT_TABLE = {
-  tableHead: ["Name", "Status", "Method", "Amount"],
+  title: [
+    { appointment: "Appointment" },
+    { alluser: "All User" },
+    { addDoctor: "Add DoctorProfile" },
+    { doctor: "Doctor" },
+    { manage: "Manage Doctor" },
+  ],
+  tableHead: ["SL", "Name", "Status", "Method", "Amount"],
   items: [
     {
       _id: "1a2b3c4d",
