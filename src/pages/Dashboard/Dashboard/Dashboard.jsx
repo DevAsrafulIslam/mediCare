@@ -84,7 +84,7 @@ const Dashboard = () => {
                   <span className="px-8">
                     <Progress className="bg-[#ff003352]" value="33" />
                   </span>
-                  <h3 className="px-8 py-2">Doctor</h3>
+                  <h3 className="px-8 py-2">Patients</h3>
                 </div>
               </div>
             </Card>
@@ -98,7 +98,7 @@ const Dashboard = () => {
                   <span className="px-8">
                     <Progress className="bg-[#ff003352]" value="33" />
                   </span>
-                  <h3 className="px-8 py-2">Doctor</h3>
+                  <h3 className="px-8 py-2">Appointment</h3>
                 </div>
               </div>
             </Card>

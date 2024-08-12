@@ -23,6 +23,7 @@ import { Input } from "@/components/ui/input";
 
 import SideBar from "@/pages/Shared/SideBar/SideBar";
 import { Label } from "@radix-ui/react-dropdown-menu";
+import DashboardTitle from "@/pages/DashboardTitle/DashboardTitle";
 
 const AddDoctor = () => {
   return (
@@ -37,7 +38,9 @@ const AddDoctor = () => {
                 <Card className="w-[350px] mx-auto">
                   <CardHeader>
                     <CardTitle className="text-center text-5xl text-red-800">
-                      <h2>Doctors</h2>
+                      <h2>
+                        <DashboardTitle />
+                      </h2>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -74,11 +77,7 @@ const AddDoctor = () => {
                           </Select>
                         </div>
                         <div className="flex flex-col space-y-1.5">
-                          <Input
-                            type="imagemg"
-                            id="img"
-                            placeholder="Enter Your Email"
-                          />
+                          <Input type="file" id="file" />
                         </div>
                       </div>
                     </form>

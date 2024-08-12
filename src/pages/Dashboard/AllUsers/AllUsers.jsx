@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/table";
 import { APPOINTMENT_TABLE } from "@/data/appointmentTable";
 import { cn } from "@/lib/utils";
+import DashboardTitle from "@/pages/DashboardTitle/DashboardTitle";
 import SideBar from "@/pages/Shared/SideBar/SideBar";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
@@ -26,7 +27,9 @@ const AllUsers = () => {
   const [date, setDate] = useState(new Date());
   return (
     <div className="">
-      <h1 className="max-w-[250px] w-full p-4">All User</h1>
+      <h1 className="max-w-[250px] w-full p-4">
+        <DashboardTitle></DashboardTitle>
+      </h1>
       <div className="flex">
         <SideBar />
         <div className="w-full space-y-4 mb-8">
@@ -34,7 +37,9 @@ const AllUsers = () => {
             <div className=" w-full md:px-7">
               <div className="grid grid-cols-2 w-full justify-between px-4 md:px-0">
                 <div>
-                  <h1 className="text-2xl text-orange-600">All User</h1>
+                  <h1 className="flex items-center gap-4 text-2xl text-orange-600">
+                    <DashboardTitle />: {APPOINTMENT_TABLE.items.length}
+                  </h1>
                 </div>
                 <div className="text-end">
                   <Popover>
