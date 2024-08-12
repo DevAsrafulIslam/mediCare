@@ -1,3 +1,9 @@
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -86,11 +92,29 @@ const NavBar = () => {
                 </NavigationMenuItem>
               ))}
               <NavigationMenuItem>
-                <Button
-                  onClick={handleAuthAction}
-                  className="hover:bg-teal-800 transition duration-300"
-                >
-                  {user ? "Logout" : "Login"}
+                <Button className="hover:bg-teal-800 transition duration-300">
+                  <Popover>
+                    <PopoverTrigger>User</PopoverTrigger>
+
+                    <PopoverContent className="grid w-fit bg-white">
+                      <Link to="dashboard">
+                        <Button className="hover:bg-teal-800">Profile</Button>
+                      </Link>
+                      <Link to="dashboard">
+                        <Button className="hover:bg-teal-800">Settings</Button>
+                      </Link>
+
+                      <Button
+                        onClick={() => {
+                          handleAuthAction();
+                          setIsClicked(false);
+                        }}
+                        className="hover:bg-teal-800 transition duration-300"
+                      >
+                        {user ? "Logout" : "Login"}
+                      </Button>
+                    </PopoverContent>
+                  </Popover>
                 </Button>
               </NavigationMenuItem>
             </NavigationMenuList>
