@@ -39,7 +39,7 @@ const navigation = [
   },
   {
     name: "Review",
-    href: "/dashboard",
+    href: "/review",
   },
   {
     name: "Contact",
