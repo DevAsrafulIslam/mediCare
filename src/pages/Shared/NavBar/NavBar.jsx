@@ -74,7 +74,6 @@ const NavBar = () => {
             Medi<span className="text-orange-600">Care</span>
           </h1>
         </div>
-        <div>{user?.displayName}</div>
         <div className="hidden md:flex">
           <NavigationMenu>
             <NavigationMenuList>
