@@ -18,6 +18,7 @@ import { AuthContext } from "@/providers/AuthProviders";
 
 const Login = () => {
   const navigate = useNavigate();
+
   const { createUser, googleSignIn } = useContext(AuthContext);
   console.log(createUser);
   const handleGoogleSignIn = () => {
@@ -46,8 +47,8 @@ const Login = () => {
           <form>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="Your Name" />
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" placeholder="Your Email" />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <div className="flex justify-between ">
