@@ -17,10 +17,26 @@ import { useContext } from "react";
 import { AuthContext } from "@/providers/AuthProviders";
 
 const Login = () => {
+  const { googleSignIn, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  const { createUser, googleSignIn } = useContext(AuthContext);
-  console.log(createUser);
+  // login with email and password
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    // signIn use in auth provider
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  // login with Google account
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then((result) => {
@@ -44,7 +60,7 @@ const Login = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="email">Email</Label>

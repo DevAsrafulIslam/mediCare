@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 
 import {
@@ -13,7 +14,36 @@ import { Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import SocialLogin from "@/pages/SocialLogin/SocialLogin";
 
+import { useContext, useState } from "react";
+import { AuthContext } from "@/providers/AuthProviders";
+
 const SignIn = () => {
+  const { createUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSuccess("");
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    console.log(name, email, password);
+
+    // Pass email and password to createUser
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setError("");
+        event.target.reset();
+        setSuccess("User created successfully");
+      })
+      .catch((error) => {
+        console.error("Error creating user:", error);
+        setError(error.message);
+        setSuccess("");
+      });
+  };
   return (
     <div className="container">
       <Card className="w-[350px] mx-auto my-36">
@@ -27,15 +57,16 @@ const SignIn = () => {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name">Name</Label>
                 <Input id="name" placeholder="Your Name" />
               </div>
+
               <div className="flex flex-col space-y-1.5">
                 <Label htmlFor="name">Email</Label>
-                <Input type="email" id="email" placeholder="Email" />
+                <Input type="email" id="email" placeholder="Email" required />
               </div>
               <div className="flex flex-col space-y-1.5">
                 <div className="flex justify-between ">
@@ -44,8 +75,15 @@ const SignIn = () => {
                     Forget Password?
                   </Link>
                 </div>
-                <Input id="password" type="password" placeholder="Password" />
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                  required
+                />
               </div>
+              {error}
+              {success}
               <div className="text-black space-y-1.5">
                 <Button
                   variant="outline"
