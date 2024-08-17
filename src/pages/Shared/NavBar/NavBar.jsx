@@ -71,7 +71,7 @@ const NavBar = () => {
         <div className="flex items-center gap-4 py-4">
           <img className="hidden md:flex" src="/Group 1.png" alt="" />
           <h1 className="text-2xl">
-            Medi<span className="text-orange-600">Care</span>
+            𝑴𝒆𝒅𝒊<span className="text-orange-600">𝑪𝒂𝒓𝒆</span>
           </h1>
         </div>
         <div className="hidden md:flex">
