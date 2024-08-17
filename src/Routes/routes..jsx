@@ -7,11 +7,11 @@ import Login from "@/pages/Login/Login";
 import DoctorProfile from "@/pages/DoctorProfile/DoctorProfile";
 import MyAppointment from "@/pages/Dashboard/MyAppointment/MyAppointment";
 
-import SignIn from "@/SignIn/SignIn";
 import Dashboard from "@/pages/Dashboard/Dashboard/Dashboard";
 import AllUsers from "@/pages/Dashboard/AllUsers/AllUsers";
 import AddDoctor from "@/pages/Dashboard/AddDoctor/AddDoctor";
 import ManageDoctors from "@/pages/Dashboard/ManageDoctors/ManageDoctors";
+import SignIn from "@/pages/SignIn/SignIn";
 
 export const router = createBrowserRouter([
   {
