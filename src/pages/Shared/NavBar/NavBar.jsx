@@ -100,7 +100,7 @@ const NavBar = () => {
                         <Button className="hover:bg-teal-800">Profile</Button>
                       </Link>
                       <Link to="dashboard">
-                        <Button className="hover:bg-teal-800">Settings</Button>
+                        <Button className="hover:bg-teal-800">Dashboard</Button>
                       </Link>
 
                       <Button
